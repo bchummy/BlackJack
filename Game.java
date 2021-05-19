@@ -60,6 +60,7 @@ public class Game {
         SecondRound();
 
     }
+
     public void SecondRound(){
 
         System.out.println("=====================================================================================");
@@ -101,7 +102,7 @@ public class Game {
         String choose2 = input2.next();
         int PCardNum = 2;
         player.PlayerFinalPointUpdata();
-        while(choose2.equals("y") && PCardNum < 5 && player.playerPoint < 22 && player.playerPoint2 < 22){
+        while(choose2.equals("y") && PCardNum < 5 && (player.playerPoint < 22 ||player.playerPoint2 < 22)){
             Random pNumN = new Random();
             int playerNnum = pNumN.nextInt(pack.getSize());
             Card playerNcard = pack.getElementAt(playerNnum);
