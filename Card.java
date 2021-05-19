@@ -9,6 +9,9 @@ public class Card {
         this.rank = rank;
     }
 
+    public int getCardRank() {
+        return this.rank;
+    }
     public int getCardNum() {
         return this.num;
     }

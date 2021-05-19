@@ -1,7 +1,4 @@
-package UI;
-
-import Model.*;
-
+package Model;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -39,7 +36,7 @@ public class Game {
 
         int player1num = pNum.nextInt(pack.getSize());
         Card player1card = pack.getElementAt(player1num);
-        System.out.println("Your first card is " + player1card.cardShow() + player1card.getCardNumAndRank());
+        System.out.println("Your first card is " + player1card.cardShow() + " of " + Print_clubs(player1card.getCardRank()));
         player.upDataPoint(player1card);
         if(player.playerPoint == player.playerPoint2) {
             System.out.println("Your have " + player.playerPoint + " points" );
@@ -51,7 +48,7 @@ public class Game {
         Random dNum = new Random();
         int dealer1num = dNum.nextInt(pack.getSize());
         Card dealer1card = pack.getElementAt(dealer1num);
-        System.out.println("Dealer first card is "+ dealer1card.cardShow() + dealer1card.getCardNumAndRank());
+        System.out.println("Dealer first card is "+ dealer1card.cardShow() + " of " + Print_clubs(dealer1card.getCardRank()));
         dealer.upDataPoint(dealer1card);
         if(dealer.dealerPoint == dealer.dealerPoint2) {
             System.out.println("Dealer has " + dealer.dealerPoint + " points");
@@ -70,7 +67,7 @@ public class Game {
         Random pNum2 = new Random();
         int player2num = pNum2.nextInt(pack.getSize());
         Card player2card = pack.getElementAt(player2num);
-        System.out.println("Your second card is "+ player2card.cardShow() + player2card.getCardNumAndRank());
+        System.out.println("Your second card is "+ player2card.cardShow() + " of " + Print_clubs(player2card.getCardRank()));
         player.upDataPoint(player2card);
         if(player.playerPoint == player.playerPoint2) {
             System.out.println("Your have " + player.playerPoint + " points" );
@@ -156,7 +153,7 @@ public class Game {
                     Random dNumN = new Random();
                     int dealerNnum = dNumN.nextInt(pack.getSize());
                     Card dealerNcard = pack.getElementAt(dealerNnum);
-                    System.out.println("Dealer got a "+ dealerNcard.cardShow() + dealerNcard.getCardNumAndRank());
+                    System.out.println("Dealer got a "+ dealerNcard.cardShow() + " of " + Print_clubs(dealerNcard.getCardRank()));
                     dealer.upDataPoint(dealerNcard);
                     DCardNum++;
                     dealer.DealerFinalPointUpdata();
@@ -179,4 +176,16 @@ public class Game {
         System.out.println("Would you like to play another game of BlackJack ? (y/n)");
         Input1();
     }
+    public String Print_clubs(int clubs) {
+        if (clubs == 1 ) {
+            return "Spades";
+        } else if (clubs == 2 ) {
+            return "Hearts";
+        } else if (clubs == 3 ) {
+            return "Clubs";
+        } else {
+            return "Diamonds";
+        }
+    }
 }
+
