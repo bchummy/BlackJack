@@ -3,7 +3,6 @@ package Model;
 import java.util.Random;
 import java.util.Scanner;
 
-
 public class Game {
     public Pack pack = new Pack();
     public Player player = new Player();
@@ -43,6 +42,8 @@ public class Game {
         } else {
             System.out.println("Your have " + player.playerPoint + "/" + player.playerPoint2 + " points");
         }
+
+
         System.out.println("-------------------------------------------------------------------------------------");
 
         Random dNum = new Random();
@@ -94,6 +95,7 @@ public class Game {
         System.out.println("=====================================================================================");
 
         PlayerCheck();
+        EndGame(dealer2card);
     }
 
     public void PlayerCheck(){
@@ -106,7 +108,7 @@ public class Game {
             Random pNumN = new Random();
             int playerNnum = pNumN.nextInt(pack.getSize());
             Card playerNcard = pack.getElementAt(playerNnum);
-            System.out.println("You got a "+ playerNcard.cardShow() + playerNcard.getCardNumAndRank());
+            System.out.println("Your second card is "+ playerNcard.cardShow() + " of " + Print_clubs(playerNcard.getCardRank()));
             player.upDataPoint(playerNcard);
             PCardNum++;
             player.PlayerFinalPointUpdata();
@@ -126,11 +128,9 @@ public class Game {
                 System.out.println("Maximum of cards are 5 ");
             }
         }
-
-        EndGame();
     }
 
-    public void EndGame(){
+    public void EndGame(Card card){
         System.out.println("=====================================================================================");
 
         dealer.DealerFinalPointUpdata();
@@ -140,6 +140,7 @@ public class Game {
 
         System.out.println("Your have "+ playerF + " points");
         System.out.println("Dealer flip his second card ");
+        System.out.println("Dealer second card is "+ card.cardShow() + " of " + Print_clubs(card.getCardRank()));
         System.out.println("Dealer has "+ dealerF+ " points in total");
 
         if (playerF > 21){
