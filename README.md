@@ -8,3 +8,7 @@
 
 
 ![BlackJackModel](https://user-images.githubusercontent.com/73052922/119238503-79ea0380-baf7-11eb-8249-140c9c9bca31.gif)
+
+![BlackJackModel2](https://user-images.githubusercontent.com/73052922/119238566-faa8ff80-baf7-11eb-8324-7c3c381f40b9.gif)
+
+
